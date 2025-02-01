@@ -1,0 +1,35 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "© Copyright 2024 by Angelo Ripamonti - All rights reserved.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngeloRipamonti/5C_Ripamonti_Upload.git"
+  },
+  "keywords": [
+    "js",
+    "nodejs",
+    "express",
+    "multer",
+    "tailwindcss"
+  ],
+  "author": "Angelo Ripamonti",
+  "license": "CC-BY-NC-ND-4.0",
+  "bugs": {
+    "url": "https://github.com/AngeloRipamonti/5C_Ripamonti_Upload/issues"
+  },
+  "homepage": "https://github.com/AngeloRipamonti/5C_Ripamonti_Upload#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "http": "^0.0.1-security",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
