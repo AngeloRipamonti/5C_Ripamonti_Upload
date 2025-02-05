@@ -22,3 +22,4 @@ const handleSubmit = async (event) => {
 }
 
 button.onclick = handleSubmit;
+

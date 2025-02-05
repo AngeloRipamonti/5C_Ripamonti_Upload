@@ -2,6 +2,7 @@ const express = require("express");
 const http = require('http');
 const path = require('path');
 const multer  = require('multer');
+const fs = require('fs');
 const app = express();
 
 let storage = multer.diskStorage({
@@ -23,6 +24,11 @@ app.post('/upload', (req, res) => {
     res.json({url: "./files/" + req.file.filename});    
   })
 });
+
+app.get("/filelist", (req, res) => {
+  const paths = fs.readdirSync(path.join(__dirname, 'files'));
+  res.json(paths);    
+})
 
 const server = http.createServer(app);
 server.listen(5600, () => {
