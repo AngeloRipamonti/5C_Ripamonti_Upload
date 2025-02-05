@@ -12,10 +12,8 @@ const handleSubmit = async (event) => {
         body: body
     };
     try {
-        const res = await fetch("/upload", fetchOptions);
-        const data = await res.json();
-        link.setAttribute("href", data.url);
-        link.innerText = data.url;
+        await fetch("/upload", fetchOptions);
+        await render();
     } catch (e) {
         console.log(e);
     }
@@ -26,8 +24,12 @@ button.onclick = handleSubmit;
 async function render () {
     const res = await fetch("/filelist");
     const data = await res.json();
-
-    `<a href="`+ data.url +`" class="text-blue-500 hover:underline">`+ data.url +`</a>`
-
+    let html = `<ul class="list-none">`;
+    data.forEach(element => {
+        html += `<li><a href="`+ element +`" class="text-blue-500 hover:underline">`+ element +`</a></li>`;
+    });
+    html+="</ul>";
+    divLink.innerHTML = html;
 }
+
 render();
