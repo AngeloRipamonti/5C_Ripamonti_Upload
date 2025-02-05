@@ -26,7 +26,10 @@ app.post('/upload', (req, res) => {
 });
 
 app.get("/filelist", (req, res) => {
-  const paths = fs.readdirSync(path.join(__dirname, 'files'));
+  let paths = fs.readdirSync(path.join(__dirname, 'files'));
+  paths = paths.map((file, index) => {
+    return ("./files/" + file);
+  });
   res.json(paths);    
 })
 

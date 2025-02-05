@@ -1,7 +1,7 @@
 
 const inputFile = document.querySelector('#file');
 const button = document.querySelector("#button");
-const link = document.querySelector("#link");
+const divLink = document.querySelector("#link"); 
 
 const handleSubmit = async (event) => {
     const formData = new FormData();
@@ -23,3 +23,11 @@ const handleSubmit = async (event) => {
 
 button.onclick = handleSubmit;
 
+async function render () {
+    const res = await fetch("/filelist");
+    const data = await res.json();
+
+    `<a href="`+ data.url +`" class="text-blue-500 hover:underline">`+ data.url +`</a>`
+
+}
+render();
